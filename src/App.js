@@ -5,6 +5,7 @@ import ContextProvider from './Context';
 import Router from './components/Router';
 import MainNavigation from './components/MainNavigation/MainNavigation';
 import { GlobalStyles } from './components/GlobalStyles';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <GlobalStyles />
           <MainNavigation />
           <Router />
+          <Footer />
         </Suspense>
       </BrowserRouter>
     </ContextProvider>
