@@ -1,5 +1,14 @@
-import React, { Fragment } from 'react';
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import Router from './components/Router';
 
 export default function App() {
-  return <Fragment>Hallo Welt!</Fragment>;
+  return (
+    <BrowserRouter>
+      <Suspense fallback="Inhalt wird geladen...">
+        <Router />
+      </Suspense>
+    </BrowserRouter>
+  );
 }
