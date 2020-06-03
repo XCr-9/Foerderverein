@@ -23,6 +23,10 @@ export default function Footer() {
           ))}
         </nav>
       </StyledFooter>
+
+      <StyledSubFooter>
+        <a href={content.developer[1]}>{content.developer[0]}</a>
+      </StyledSubFooter>
     </Fragment>
   );
 }
@@ -82,5 +86,19 @@ const StyledFooter = styled.footer`
         text-align: center;
       }
     }
+  }
+`;
+
+const StyledSubFooter = styled.footer`
+  padding: 5px 12px;
+  display: flex;
+  font-size: 12px;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: #24292e;
+
+  a {
+    text-decoration: none;
+    color: #949494;
   }
 `;
