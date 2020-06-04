@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 
+import Parallax from '../Parallax';
+
 export default function Home() {
   return (
     <Fragment>
-      <h1>Home</h1>
+      <Parallax />
     </Fragment>
   );
 }
