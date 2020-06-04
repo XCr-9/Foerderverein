@@ -6,6 +6,7 @@ import Router from './components/Router';
 import MainNavigation from './components/MainNavigation/MainNavigation';
 import { GlobalStyles } from './components/GlobalStyles';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <BrowserRouter>
         <Suspense fallback="Inhalt wird geladen...">
           <GlobalStyles />
+          <ScrollToTop />
           <MainNavigation />
           <Router />
           <Footer />
