@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { content } from './data/Content';
+import { legal } from './data/Legal';
 
 export const Context = React.createContext(null);
 
@@ -9,6 +10,7 @@ export default function ContextProvider({ children }) {
     <Context.Provider
       value={{
         content,
+        legal,
       }}
     >
       {children}
