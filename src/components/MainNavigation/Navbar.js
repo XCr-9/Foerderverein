@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 import { Context } from '../../Context';
@@ -10,9 +10,13 @@ function Navbar({ open, setOpen }) {
   return (
     <StyledNavbar open={open}>
       {content.header.navigation.map((links) => (
-        <Link key={links.href} to={links.href} onClick={() => setOpen(false)}>
+        <HashLink
+          key={links.href}
+          to={links.href}
+          onClick={() => setOpen(false)}
+        >
           {links.linkText}
-        </Link>
+        </HashLink>
       ))}
     </StyledNavbar>
   );
