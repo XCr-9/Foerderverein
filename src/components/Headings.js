@@ -2,48 +2,48 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 export const Heading = (props) => {
-  const { className, h1, h2, h3, h4, h5, h6, title, style } = props;
+  const { className, h1, h2, h3, h4, h5, h6, id, title, style } = props;
 
   switch (true) {
     case h1:
       return (
-        <H1 className={className} style={style}>
+        <H1 className={className} id={id} style={style}>
           {title}
         </H1>
       );
     case h2:
       return (
-        <H2 className={className} style={style}>
+        <H2 className={className} id={id} style={style}>
           {title}
         </H2>
       );
     case h3:
       return (
-        <H3 className={className} style={style}>
+        <H3 className={className} id={id} style={style}>
           {title}
         </H3>
       );
     case h4:
       return (
-        <H4 className={className} style={style}>
+        <H4 className={className} id={id} style={style}>
           {title}
         </H4>
       );
     case h5:
       return (
-        <H5 className={className} style={style}>
+        <H5 className={className} id={id} style={style}>
           {title}
         </H5>
       );
     case h6:
       return (
-        <H6 className={className} style={style}>
+        <H6 className={className} id={id} style={style}>
           {title}
         </H6>
       );
     default:
       return (
-        <H1 className={className} style={style}>
+        <H1 className={className} id={id} style={style}>
           {title}
         </H1>
       );
