@@ -21,6 +21,7 @@ const StyledParallax = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-flow: row wrap;
   height: calc(100vh - 58px); // 58px = header navbars height incl padding
