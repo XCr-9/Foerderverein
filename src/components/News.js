@@ -14,7 +14,7 @@ export default function News() {
       {content.news.messages ? (
         <ul>
           {content.news.messages.map((message) => (
-            <li key={message.heading}>
+            <li key={message.text}>
               {message.date}: {message.text}{' '}
               {message.link ? (
                 <Fragment>
