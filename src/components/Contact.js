@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Context } from '../Context';
 import { TwoColumns } from './Columns';
 import { Heading } from './Headings';
+import Iframe from './Iframe';
 
 export default function Contact() {
   const { content } = useContext(Context);
@@ -21,8 +22,6 @@ export default function Contact() {
                 <br />
               </Fragment>
             ))}
-          </div>
-          <div className="column-right">
             <Heading h3 title={content.contact.sections[1].heading} />
             {content.contact.sections[1].content.map((line) => (
               <Fragment key={line}>
@@ -30,6 +29,14 @@ export default function Contact() {
                 <br />
               </Fragment>
             ))}
+          </div>
+          <div className="column-right">
+            <Iframe
+              title={content.contact.map.title}
+              height={content.contact.map.height}
+              width={content.contact.map.width}
+              src={content.contact.map.src}
+            />
           </div>
         </TwoColumns>
       </div>
