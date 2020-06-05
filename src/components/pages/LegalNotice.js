@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 
 import { Context } from '../../Context';
 import { Heading } from '../Headings';
+import { meta } from '../../helpers/meta';
 
 export default function LegalNotice() {
   const { legal } = useContext(Context);
+
+  document.title = legal.legalNotice.meta.title;
+  meta('name', 'description', legal.legalNotice.meta.description);
 
   return (
     <div className="wrap">
