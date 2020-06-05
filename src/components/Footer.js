@@ -42,7 +42,7 @@ const StyledFooter = styled.footer`
     color: #fff;
     margin: 0;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1100px) {
       flex: 0 0 100%;
       text-align: center;
     }
@@ -51,7 +51,7 @@ const StyledFooter = styled.footer`
       text-decoration: none;
       color: #fff;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1100px) {
         flex: 0 0 100%;
         text-align: center;
       }
@@ -63,7 +63,7 @@ const StyledFooter = styled.footer`
     flex-flow: row wrap;
     justify-content: space-between;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1100px) {
       flex: 0 0 100%;
       margin-top: 15px;
       text-align: center;
@@ -72,17 +72,19 @@ const StyledFooter = styled.footer`
     a {
       text-decoration: none;
       color: #fff;
+      margin-left: 25px;
 
       &:first-child {
-        margin-right: 25px;
+        margin-left: 0;
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1100px) {
           margin-right: 0;
         }
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1100px) {
         flex: 0 0 100%;
+        margin-left: 0;
         text-align: center;
       }
     }
