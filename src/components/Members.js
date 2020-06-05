@@ -37,6 +37,10 @@ const StyledMembers = styled.ul`
     flex: 0 0 33%;
     text-align: center;
 
+    @media (max-width: 768px) {
+      flex: 0 0 100%;
+    }
+
     img {
       border-radius: 50%;
       width: 200px;
