@@ -28,7 +28,7 @@ const StyledParallax = styled.div`
   justify-content: space-around;
 
   h1 {
-    background-color: #971b24e6;
+    background-color: rgba(151, 27, 36, 0.9);
     border-radius: 3px;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
     box-sizing: border-box;
