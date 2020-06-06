@@ -34,7 +34,10 @@ export default function News() {
               {message.date}: {message.text}{' '}
               {message.link ? (
                 <Fragment>
-                  - <Link to={message.link[0]}>{message.link[1]}</Link>
+                  -{' '}
+                  <Link to={message.link[0]} style={{ color: '#fff' }}>
+                    {message.link[1]}
+                  </Link>
                 </Fragment>
               ) : null}
             </li>
