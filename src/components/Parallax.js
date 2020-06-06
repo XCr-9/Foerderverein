@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { Heading } from './Headings';
@@ -7,9 +8,25 @@ import { Heading } from './Headings';
 export default function Parallax() {
   const { content } = useContext(Context);
 
+  const [ref, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  }, [inView]);
+
   return (
-    <StyledParallax>
-      <Heading h1 title={content.welcome} />
+    <StyledParallax ref={ref}>
+      <Heading
+        h1
+        title={content.welcome}
+        className="fadein"
+        style={{
+          opacity: opacity,
+        }}
+      />
     </StyledParallax>
   );
 }

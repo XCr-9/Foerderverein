@@ -1,5 +1,6 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { TwoColumns } from './Columns';
@@ -9,9 +10,24 @@ import Iframe from './Iframe';
 export default function Contact() {
   const { content } = useContext(Context);
 
+  const [ref, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  }, [inView]);
+
   return (
     <StyledContainer>
-      <div className="wrap">
+      <section
+        className="wrap fadein"
+        ref={ref}
+        style={{
+          opacity: opacity,
+        }}
+      >
         <Heading h2 title={content.contact.heading} id="kontakt" />
         <TwoColumns columnLeft="0 0 48%" columnRight="0 0 48%">
           <div className="column-left">
@@ -39,7 +55,7 @@ export default function Contact() {
             />
           </div>
         </TwoColumns>
-      </div>
+      </section>
     </StyledContainer>
   );
 }

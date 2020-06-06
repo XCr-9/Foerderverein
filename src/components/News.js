@@ -1,6 +1,7 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { Heading } from './Headings';
@@ -8,8 +9,23 @@ import { Heading } from './Headings';
 export default function News() {
   const { content } = useContext(Context);
 
+  const [ref, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  }, [inView]);
+
   return (
-    <StyledNews>
+    <StyledNews
+      className="fadein"
+      ref={ref}
+      style={{
+        opacity: opacity,
+      }}
+    >
       <Heading h2 title={content.news.heading} style={{ color: '#fff' }} />
       {content.news.messages ? (
         <ul>
@@ -31,7 +47,7 @@ export default function News() {
   );
 }
 
-const StyledNews = styled.div`
+const StyledNews = styled.section`
   background-color: #971b24;
   border-radius: 4px;
   color: #fff;

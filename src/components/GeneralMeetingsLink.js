@@ -1,15 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 
 export function GeneralMeetingsLink() {
   const { content } = useContext(Context);
 
+  const [ref, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  }, [inView]);
+
   return (
     <StyledContainer>
-      <p id="mitgliederversammlungen">
+      <p
+        id="mitgliederversammlungen"
+        className="fadein"
+        ref={ref}
+        style={{
+          opacity: opacity,
+        }}
+      >
         {content.membership.link.text}
 
         <Link to={content.membership.link.button[1]}>

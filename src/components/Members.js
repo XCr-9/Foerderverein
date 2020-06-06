@@ -1,5 +1,6 @@
-import React, { Fragment, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { Heading } from './Headings';
@@ -7,8 +8,23 @@ import { Heading } from './Headings';
 export default function Members() {
   const { content } = useContext(Context);
 
+  const [ref, inView] = useInView();
+  const [opacity, setOpacity] = useState('0');
+
+  useEffect(() => {
+    if (inView) {
+      setOpacity('1');
+    }
+  }, [inView]);
+
   return (
-    <Fragment>
+    <section
+      className="fadein"
+      ref={ref}
+      style={{
+        opacity: opacity,
+      }}
+    >
       <Heading h2 title={content.about.members.heading} />
       <StyledMembers>
         {content.about.members.images.map((member) => (
@@ -22,7 +38,7 @@ export default function Members() {
           </li>
         ))}
       </StyledMembers>
-    </Fragment>
+    </section>
   );
 }
 

@@ -72,5 +72,10 @@ export const GlobalStyles = createGlobalStyle`
       padding: 0;
       width: 100%;
     }
+
+    .fadein {
+      transition: .5s;
+      transition-delay: .2s;
+    }
   }
 `;
