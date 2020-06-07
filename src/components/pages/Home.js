@@ -20,13 +20,11 @@ export default function Home() {
   return (
     <Fragment>
       <Parallax />
-      <div className="wrap">
-        <News />
-        <About />
-        <Members />
-        <hr />
-        <Projects />
-      </div>
+      <News />
+      <About />
+      <Members />
+      <hr />
+      <Projects />
       <GeneralMeetingsLink />
       <Membership />
       <hr />

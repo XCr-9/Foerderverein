@@ -18,13 +18,14 @@ export default function About() {
 
   return (
     <section
+      id="ueber-uns"
+      className="wrap fadein"
       ref={ref}
-      className="fadein"
       style={{
         opacity: opacity,
       }}
     >
-      <Heading h2 title={content.about.heading} id="ueber-uns" />
+      <Heading h2 title={content.about.heading} />
       <ul>
         {content.about.list.map((list) => (
           <li key={list}>{list}</li>

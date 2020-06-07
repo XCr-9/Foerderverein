@@ -4,10 +4,10 @@ import OpenSansRegular from '../assets/fonts/OpenSans-Regular.ttf';
 
 export const GlobalStyles = createGlobalStyle`
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url(${OpenSansRegular});
-}
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${OpenSansRegular});
+  }
 
   html {
     scroll-behavior: smooth;
@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
 
     .wrap {
       box-sizing: border-box;
-      margin: 30px auto 60px auto;
+      margin: 0 auto;
       max-width: 1170px;
       padding: 15px;
       width: 100%;
@@ -67,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
       background-image: linear-gradient(to right, rgba(151, 27, 36, 0), rgba(151, 27, 36, 0.9), rgba(151, 27, 36, 0));
       border: 0;
       height: 1px;
-      margin: 80px auto;
+      margin: 90px auto 0 auto;
       max-width: 1170px;
       padding: 0;
       width: 100%;
@@ -77,5 +77,13 @@ export const GlobalStyles = createGlobalStyle`
       transition: .5s;
       transition-delay: .2s;
     }
+
+    #kontakt, 
+    #mitglied-werden,
+    #projekte,
+    #ueber-uns {
+      padding-top: 100px; /* should at least correspond to the height of the header navbar */
+    }
+    #mitgliederversammlungen { padding-top: 40px; }
   }
 `;

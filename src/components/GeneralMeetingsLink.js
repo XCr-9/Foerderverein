@@ -18,36 +18,35 @@ export function GeneralMeetingsLink() {
   }, [inView]);
 
   return (
-    <StyledContainer>
-      <p
-        id="mitgliederversammlungen"
-        className="fadein"
-        ref={ref}
-        style={{
-          opacity: opacity,
-        }}
-      >
-        {content.membership.link.text}
+    <div id="mitgliederversammlungen">
+      <StyledContainer>
+        <p
+          className="wrap fadein"
+          ref={ref}
+          style={{
+            opacity: opacity,
+          }}
+        >
+          {content.membership.link.text}
 
-        <Link to={content.membership.link.button[1]}>
-          <button type="button">{content.membership.link.button[0]}</button>
-        </Link>
-      </p>
-    </StyledContainer>
+          <Link to={content.membership.link.button[1]}>
+            <button type="button">{content.membership.link.button[0]}</button>
+          </Link>
+        </p>
+      </StyledContainer>
+    </div>
   );
 }
 
 const StyledContainer = styled.div`
   background-color: #d7d7d7;
   color: #000;
+  margin: 30px auto 0 auto;
 
   p {
     box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 1170px;
-    padding: 30px 15px;
+    padding: 30px 0;
     text-align: center;
-    width: 100%;
 
     a {
       text-decoration: none;

@@ -19,13 +19,14 @@ export default function Projects() {
 
   return (
     <section
-      className="fadein"
+      id="projekte"
+      className="wrap fadein"
       ref={ref}
       style={{
         opacity: opacity,
       }}
     >
-      <Heading h2 title={content.projects.heading} id="projekte" />
+      <Heading h2 title={content.projects.heading} />
       <TwoColumns columnLeft="80%" columnRight="20%">
         <div className="column-left">
           <ul>

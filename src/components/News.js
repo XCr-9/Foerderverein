@@ -20,7 +20,7 @@ export default function News() {
 
   return (
     <StyledNews
-      className="fadein"
+      className="wrap fadein"
       ref={ref}
       style={{
         opacity: opacity,
@@ -54,6 +54,9 @@ const StyledNews = styled.section`
   background-color: #971b24;
   border-radius: 4px;
   color: #fff;
-  margin-bottom: 90px;
   padding: 20px;
+
+  @media (max-width: 1200px) {
+    width: calc(100% - 30px) !important;
+  }
 `;

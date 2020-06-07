@@ -19,7 +19,7 @@ export default function Members() {
 
   return (
     <section
-      className="fadein"
+      className="wrap fadein"
       ref={ref}
       style={{
         opacity: opacity,

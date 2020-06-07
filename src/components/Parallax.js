@@ -43,6 +43,7 @@ const StyledParallax = styled.div`
   flex-flow: row wrap;
   height: calc(100vh - 58px); // 58px = header navbars height incl padding
   justify-content: space-around;
+  margin-bottom: 60px;
 
   h1 {
     background-color: rgba(151, 27, 36, 0.9);
