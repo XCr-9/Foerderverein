@@ -26,6 +26,8 @@ export default function PrivacyPolicy() {
           </section>
         );
       })}
+
+      <p dangerouslySetInnerHTML={{ __html: legal.privacyPolicy.source }} />
     </article>
   );
 }
