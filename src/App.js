@@ -7,12 +7,13 @@ import MainNavigation from './components/MainNavigation/MainNavigation';
 import { GlobalStyles } from './components/GlobalStyles';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Spinner from './components/Spinner';
 
 export default function App() {
   return (
     <ContextProvider>
       <BrowserRouter>
-        <Suspense fallback="Inhalt wird geladen...">
+        <Suspense fallback={<Spinner />}>
           <GlobalStyles />
           <ScrollToTop />
           <MainNavigation />
