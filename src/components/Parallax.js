@@ -34,7 +34,7 @@ export default function Parallax() {
 const StyledParallax = styled.div`
   align-items: center;
   background-attachment: fixed;
-  background-image: url('./img/goethe-gymnasium-nauen.png');
+  background-image: url('https://loremflickr.com/1920/1080/landscape');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
