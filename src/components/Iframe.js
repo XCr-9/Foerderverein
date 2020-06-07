@@ -9,10 +9,10 @@ export default function Iframe(props) {
       src={src}
       width={width}
       height={height}
-      frameborder="0"
-      allowfullscreen=""
+      frameBorder="0"
+      allowFullScreen=""
       aria-hidden="false"
-      tabindex="0"
+      tabIndex="0"
     ></iframe>
   );
 }
