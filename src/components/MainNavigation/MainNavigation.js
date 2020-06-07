@@ -49,11 +49,11 @@ export default function MainNavigation() {
   return (
     <StyledMainNavigation ref={node}>
       <ToggleButton open={open} setOpen={setOpen} />
-      <div className="site-title-desktop">
+      <div className="site-title-desktop" onClick={() => window.scrollTo(0, 0)}>
         <Link to="/">{content.siteTitle.desktop}</Link>
       </div>
       <Navbar open={open} setOpen={setOpen} />
-      <div className="site-title-mobile">
+      <div className="site-title-mobile" onClick={() => window.scrollTo(0, 0)}>
         <Link to="/">{content.siteTitle.mobile}</Link>
       </div>
       <Backdrop />
