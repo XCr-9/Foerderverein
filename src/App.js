@@ -8,9 +8,13 @@ import { GlobalStyles } from './components/GlobalStyles';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Spinner from './components/Spinner';
+import IE from './components/IE';
 
 export default function App() {
-  return (
+  // detect if browser is internet explorer
+  let isIE = /*@cc_on!@*/ false || !!document.documentMode;
+
+  return !isIE ? (
     <ContextProvider>
       <BrowserRouter>
         <Suspense fallback={<Spinner />}>
@@ -22,5 +26,7 @@ export default function App() {
         </Suspense>
       </BrowserRouter>
     </ContextProvider>
+  ) : (
+    <IE />
   );
 }
