@@ -6,7 +6,7 @@ export const trackingCode = 'UA-XXXXXXXX-X';
 ReactGA.initialize(trackingCode);
 ReactGA.set({ anonymizeIp: true });
 
-export const ga = (WrappedComponent, options = {}) => {
+export const ga = (WrappedComponent) => {
   if (document.cookie.indexOf(`${trackingCode}=true`) > -1) {
     window[`ga-disable-${trackingCode}`] = true;
   }
@@ -14,7 +14,6 @@ export const ga = (WrappedComponent, options = {}) => {
   const trackPage = (page) => {
     ReactGA.set({
       page,
-      ...options,
     });
     ReactGA.pageview(page);
   };
