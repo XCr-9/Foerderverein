@@ -66,7 +66,7 @@ const StyledMainNavigation = styled.div`
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
   display: flex;
   height: 28px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   padding: 15px;
   position: sticky;
   top: 0;
