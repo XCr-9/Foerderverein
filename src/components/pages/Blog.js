@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,22 +6,29 @@ import { Context } from '../../Context';
 import { Heading } from '../Headings';
 
 export default function Blog() {
-  const { content } = useContext(Context);
+  const { content, setBlogPostIndex } = useContext(Context);
 
   return (
     <div className="wrap">
       <Heading h1 title={content.blog.heading} />
 
       <StyledBlog>
-        {content.blog.posts.map((post) => (
+        {content.blog.posts.map((post, index) => (
           <section key={post.heading}>
             <div
               className="image"
               style={{
-                backgroundImage: `url(${post.thumbnail})`,
+                backgroundImage: post.thumbnail
+                  ? `url(${post.thumbnail})`
+                  : `url(${content.blog.defaultThumbnail})`,
               }}
             >
-              <Link to={post.button[0]}>
+              <Link
+                to={post.button[0]}
+                onClick={() => {
+                  setBlogPostIndex(index);
+                }}
+              >
                 <Heading h2 title={post.heading} />
               </Link>
             </div>

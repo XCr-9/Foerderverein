@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { ga } from '../helpers/analytics';
 
 const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 const GeneralMeetings = lazy(() => import('./pages/GeneralMeetings'));
 const Home = lazy(() => import('./pages/Home'));
 const Invitation = lazy(() => import('./pages/Invitation'));
@@ -16,7 +17,8 @@ export default function Router() {
   return (
     <Switch>
       <Route exact path="/" component={ga(Home)} />
-      <Route path="/blog" component={ga(Blog)} />
+      <Route exact path="/blog" component={ga(Blog)} />
+      <Route path="/blog/:post" component={ga(BlogPost)} />
       <Route path="/datenschutzerklaerung" component={ga(PrivacyPolicy)} />
       <Route path="/einladung" component={ga(Invitation)} />
       <Route path="/impressum" component={ga(LegalNotice)} />
