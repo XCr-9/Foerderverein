@@ -6,7 +6,10 @@ import { Heading } from './Headings';
 export default function GeneralMeetingsContent() {
   const { content, generalMeetingIndex } = useContext(Context);
 
-  const section = content.generalMeetings.list[generalMeetingIndex];
+  const section =
+    generalMeetingIndex !== 'unvalid'
+      ? content.generalMeetings.list[generalMeetingIndex]
+      : content.generalMeetings.unvalid;
 
   return (
     <article>

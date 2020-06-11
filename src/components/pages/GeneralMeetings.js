@@ -8,20 +8,21 @@ export default function GeneralMeetings() {
   const { content, setGeneralMeetingIndex } = useContext(Context);
 
   switch (window.location.hash) {
+    case '':
     case '#2020':
-      setGeneralMeetingIndex(0);
-      break;
-    case '#2019':
-      setGeneralMeetingIndex(1);
-      break;
-    case '#2018':
-      setGeneralMeetingIndex(2);
-      break;
-    case '#2017':
       setGeneralMeetingIndex(3);
       break;
-    default:
+    case '#2019':
+      setGeneralMeetingIndex(2);
+      break;
+    case '#2018':
+      setGeneralMeetingIndex(1);
+      break;
+    case '#2017':
       setGeneralMeetingIndex(0);
+      break;
+    default:
+      setGeneralMeetingIndex('unvalid');
   }
 
   return (

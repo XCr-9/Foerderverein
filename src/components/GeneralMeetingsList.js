@@ -6,16 +6,19 @@ import { Context } from '../Context';
 export default function GeneralMeetingsList() {
   const { content, setGeneralMeetingIndex } = useContext(Context);
 
-  const year = ['#2020', '#2019', '#2018', '#2017'];
+  const year = ['#2017', '#2018', '#2019', '#2020'];
 
-  return content.generalMeetings.list.map((listItem, index) => (
-    <div
-      key={listItem.year}
-      onClick={() => {
-        setGeneralMeetingIndex(index);
-      }}
-    >
-      <Link to={year[index]}>{listItem.year}</Link>
-    </div>
-  ));
+  return content.generalMeetings.list
+    .slice(0)
+    .reverse()
+    .map((listItem, index) => (
+      <div
+        key={listItem.year}
+        onClick={() => {
+          setGeneralMeetingIndex(index);
+        }}
+      >
+        <Link to={year[year.length - index - 1]}>{listItem.year}</Link>
+      </div>
+    ));
 }
