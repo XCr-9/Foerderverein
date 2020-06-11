@@ -39,7 +39,12 @@ export default function Blog() {
                   __html: post.excerpt + '...',
                 }}
               />
-              <Link to={post.button[0]}>
+              <Link
+                to={post.button[0]}
+                onClick={() => {
+                  setBlogPostIndex(index);
+                }}
+              >
                 <button type="button">{post.button[1]}</button>
               </Link>
             </div>
