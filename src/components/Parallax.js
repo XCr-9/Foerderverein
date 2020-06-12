@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
 import { Heading } from './Headings';
+import { WebP } from '../helpers/detectBrowserSupport';
 
 export default function Parallax() {
   const { content } = useContext(Context);
@@ -34,7 +35,11 @@ export default function Parallax() {
 const StyledParallax = styled.div`
   align-items: center;
   background-attachment: fixed;
-  background-image: url('https://loremflickr.com/1920/1080/landscape');
+  background-image: url('${
+    WebP()
+      ? 'https://loremflickr.com/1920/1080/landscape' // ./img/goethe-gymnasium-nauen.webp
+      : 'https://loremflickr.com/1920/1080/landscape' // ./img/goethe-gymnasium-nauen.jpg
+  }');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
