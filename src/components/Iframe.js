@@ -13,6 +13,7 @@ export default function Iframe(props) {
       allowFullScreen=""
       aria-hidden="false"
       tabIndex="0"
+      loading="lazy"
     ></iframe>
   );
 }
