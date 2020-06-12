@@ -4,23 +4,25 @@ import styled from 'styled-components';
 import { Context } from '../../Context';
 import { Heading } from '../Headings';
 
-export default function BlogPost() {
-  const { content, blogPostIndex } = useContext(Context);
+export default function BlogPost(props) {
+  const { content } = useContext(Context);
+
+  const { index } = props;
 
   return (
-    <StyledBlog0Post className="wrap">
-      <Heading h1 title={content.blog.posts[blogPostIndex].heading} />
-      <p className="meta">{content.blog.posts[blogPostIndex].meta}</p>
+    <StyledBlogPost className="wrap">
+      <Heading h1 title={content.blog.posts[index].heading} />
+      <p className="meta">{content.blog.posts[index].meta}</p>
       <p
         dangerouslySetInnerHTML={{
-          __html: content.blog.posts[blogPostIndex].content,
+          __html: content.blog.posts[index].content,
         }}
       />
-    </StyledBlog0Post>
+    </StyledBlogPost>
   );
 }
 
-const StyledBlog0Post = styled.article`
+const StyledBlogPost = styled.article`
   .meta {
     color: #971b24;
     font-size: 0.9em;

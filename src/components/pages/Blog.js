@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -6,7 +6,7 @@ import { Context } from '../../Context';
 import { Heading } from '../Headings';
 
 export default function Blog() {
-  const { content, setBlogPostIndex } = useContext(Context);
+  const { content } = useContext(Context);
 
   return (
     <div className="wrap">
@@ -23,12 +23,7 @@ export default function Blog() {
                   : `url(${content.blog.defaultThumbnail})`,
               }}
             >
-              <Link
-                to={post.button[0]}
-                onClick={() => {
-                  setBlogPostIndex(index);
-                }}
-              >
+              <Link to={post.button[0]}>
                 <Heading h2 title={post.heading} />
               </Link>
             </div>
@@ -39,12 +34,7 @@ export default function Blog() {
                   __html: post.excerpt + '...',
                 }}
               />
-              <Link
-                to={post.button[0]}
-                onClick={() => {
-                  setBlogPostIndex(index);
-                }}
-              >
+              <Link to={post.button[0]}>
                 <button type="button">{post.button[1]}</button>
               </Link>
             </div>
