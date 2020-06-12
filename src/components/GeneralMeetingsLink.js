@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';
+import { Heading } from './Headings';
 
 export function GeneralMeetingsLink() {
   const { content } = useContext(Context);
@@ -27,10 +28,13 @@ export function GeneralMeetingsLink() {
             opacity: opacity,
           }}
         >
-          {content.membership.link.text}
+          <Heading h2 title={content.generalMeetings.heading} />
+          {content.generalMeetings.link.text}
 
-          <Link to={content.membership.link.button[1]}>
-            <button type="button">{content.membership.link.button[0]}</button>
+          <Link to={content.generalMeetings.link.button[1]}>
+            <button type="button">
+              {content.generalMeetings.link.button[0]}
+            </button>
           </Link>
         </p>
       </StyledContainer>
