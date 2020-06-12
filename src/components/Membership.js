@@ -1,5 +1,4 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 
 import { Context } from '../Context';

@@ -15,7 +15,6 @@ export default function PrivacyPolicy() {
       <Heading h1 title={legal.privacyPolicy.heading} />
 
       {legal.privacyPolicy.sections.map((section) => {
-        console.log(legal.privacyPolicy.sections);
         return (
           <section key={section.heading}>
             <Heading h2 title={section.heading} />
