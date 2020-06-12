@@ -21,7 +21,7 @@ export function GeneralMeetingsLink() {
   return (
     <div id="mitgliederversammlungen">
       <StyledContainer>
-        <p
+        <div
           className="wrap fadein"
           ref={ref}
           style={{
@@ -29,14 +29,14 @@ export function GeneralMeetingsLink() {
           }}
         >
           <Heading h2 title={content.generalMeetings.heading} />
-          {content.generalMeetings.link.text}
+          <p>{content.generalMeetings.link.text}</p>
 
           <Link to={content.generalMeetings.link.button[1]}>
             <button type="button">
               {content.generalMeetings.link.button[0]}
             </button>
           </Link>
-        </p>
+        </div>
       </StyledContainer>
     </div>
   );
@@ -47,7 +47,7 @@ const StyledContainer = styled.div`
   color: #000;
   margin: 30px auto 0 auto;
 
-  p {
+  div {
     box-sizing: border-box;
     padding: 30px 0;
     text-align: center;
