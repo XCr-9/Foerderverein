@@ -22,6 +22,13 @@ To use "real" content, adapt the following files:
 - src/helpers/analytics.js _(there you should use your tracking code)_
 - public/img/ _(there you should replace all images)_
 
+## Optimization (Lighthouse analysis)
+
+This page is well optimized in terms of _Performance_, _Accessibility_, _Best Practices_ and _SEO_.
+
+![Lighthouse](./readme-assets/lighthouse.png 'Lighthouse Homepage')  
+_Lighthouse analysis of the home page from June 12, 2020_
+
 ---
 
 ## License
