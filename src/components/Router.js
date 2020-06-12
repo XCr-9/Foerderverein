@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { ga } from '../helpers/analytics';
+import { content } from '../data/Content';
 
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
@@ -18,7 +19,17 @@ export default function Router() {
     <Switch>
       <Route exact path="/" component={ga(Home)} />
       <Route exact path="/blog" component={ga(Blog)} />
-      <Route path="/blog/:post" component={ga(BlogPost)} />
+
+      {/* blog/:post */}
+      {content.blog.posts.map((post, index) => (
+        <Route
+          path={post.button[0]}
+          component={ga(() => (
+            <BlogPost index={index} />
+          ))}
+        />
+      ))}
+
       <Route path="/datenschutzerklaerung" component={ga(PrivacyPolicy)} />
       <Route path="/einladung" component={ga(Invitation)} />
       <Route path="/impressum" component={ga(LegalNotice)} />
