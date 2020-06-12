@@ -21,7 +21,10 @@ export default function PrivacyPolicy() {
             <Heading h2 title={section.heading} />
 
             {section.content.map((subSection) => (
-              <div dangerouslySetInnerHTML={{ __html: subSection }} />
+              <div
+                key={subSection}
+                dangerouslySetInnerHTML={{ __html: subSection }}
+              />
             ))}
           </section>
         );

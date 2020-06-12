@@ -23,6 +23,7 @@ export default function Router() {
       {/* blog/:post */}
       {content.blog.posts.map((post, index) => (
         <Route
+          key={index}
           path={post.button[0]}
           component={ga(() => (
             <BlogPost index={index} />
