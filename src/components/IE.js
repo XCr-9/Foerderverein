@@ -1,5 +1,4 @@
-import React from 'react';
-import { ie } from '../data/IE';
+import React, { Fragment } from 'react';
 
 export default function IE() {
   // Detect browser language
@@ -18,8 +17,20 @@ export default function IE() {
   }
 
   return browserLanguage === 'german' ? (
-    <div dangerouslySetInnerHTML={{ __html: ie.german }} />
+    <Fragment>
+      <h1>Achtung! Internet Explorer wird nicht mehr unterstützt.</h1>
+      <p>
+        Unterstützt werden z.B. Chrome (unsere Empfehlung), Firefox, Safari,
+        Edge und Opera.
+      </p>
+    </Fragment>
   ) : (
-    <div dangerouslySetInnerHTML={{ __html: ie.english }} />
+    <Fragment>
+      <h1>Attention! Internet Explorer is no longer supported.</h1>
+      <p>
+        The following browsers are supported e.g. Chrome (our recommendation),
+        Firefox, Safari, Edge and Opera.
+      </p>
+    </Fragment>
   );
 }
