@@ -4,9 +4,13 @@ import styled from 'styled-components';
 
 import { Context } from '../../Context';
 import { Heading } from '../Headings';
+import { meta } from '../../helpers/meta';
 
 export default function Blog() {
   const { content } = useContext(Context);
+
+  document.title = content.blog.meta.title;
+  meta('name', 'description', content.blog.meta.description);
 
   return (
     <div className="wrap">
@@ -28,7 +32,7 @@ export default function Blog() {
               </Link>
             </div>
             <div className="text">
-              <p>{post.meta}</p>
+              <p>{post.info}</p>
               <p
                 dangerouslySetInnerHTML={{
                   __html: post.excerpt + '...',
