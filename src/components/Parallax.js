@@ -35,11 +35,9 @@ export default function Parallax() {
 const StyledParallax = styled.div`
   align-items: center;
   background-attachment: fixed;
-  background-image: url('${
-    WebP()
-      ? 'https://loremflickr.com/1920/1080/landscape' // ./img/goethe-gymnasium-nauen.webp
-      : 'https://loremflickr.com/1920/1080/landscape' // ./img/goethe-gymnasium-nauen.jpg
-  }');
+  background-image: url('${WebP()
+    ? 'https://api.foerderverein-ggnauen.de/img/goethe-gymnasium-nauen.webp'
+    : 'https://api.foerderverein-ggnauen.de/img/goethe-gymnasium-nauen.jpg'}');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

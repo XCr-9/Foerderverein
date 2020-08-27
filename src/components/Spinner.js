@@ -5,7 +5,10 @@ export default function Spinner() {
   return (
     <StyledSpinner>
       <div>
-        <img src="./img/loading.png" alt="Loading" />
+        <img
+          src="https://api.foerderverein-ggnauen.de/img/loading.png"
+          alt="Loading"
+        />
         <p>Inhalt wird geladen...</p>
       </div>
     </StyledSpinner>
