@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Spinner from './components/Spinner';
 import IE from './components/IE';
+import CookieConsentBanner from './components/CookieConsent';
 
 export default function App() {
   // detect if browser is internet explorer
@@ -19,6 +20,7 @@ export default function App() {
       <BrowserRouter>
         <Suspense fallback={<Spinner />}>
           <GlobalStyles />
+          <CookieConsentBanner />
           <ScrollToTop />
           <MainNavigation />
           <Router />
