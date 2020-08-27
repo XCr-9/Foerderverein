@@ -7,20 +7,13 @@
 
 > This website was created for a booster club. However, it is reusable for various purposes.
 
-## Live demo
+## Live view
 
-Live demo: [https://foerderverein-ggnauen.de/](https://foerderverein-ggnauen.de/?source=github)
+Live view: [https://foerderverein-ggnauen.de/](https://foerderverein-ggnauen.de/?source=github)
 
-## Adjust the dummy content
+## How to run the app
 
-If you clone this repository and start it with the command `$ npm start` you will see dummy content.
-To use "real" content, adapt the following files:
-
-- src/components/Parallax.js _(there you can change the background image url)_
-- src/data/Content.js _(is used for the whole text content except the legal texts)_
-- src/data/Legal.js _(is used for all legal texts like legal notice, privacy policy etc.)_
-- src/helpers/analytics.js _(there you should use your tracking code)_
-- public/img/ _(there you should replace all images)_
+If you want to run this project locally, clone this repository, install node modules with the command `$ npm i` or `yarn` and start it with `$ npm start` or `$ yarn start`. Please note that this only works on `localhost:3000` or `localhost:3001`. Otherwise there is an error message. This is due to CORS restrictions in the API that supplies the content of the app.
 
 ## Optimization (Lighthouse analysis)
 
