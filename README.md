@@ -1,6 +1,6 @@
 # Förderverein „Freunde des Goethe-Gymnasiums Nauen e.V.“
 
-[![MIT License](https://img.shields.io/github/license/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen.svg)](https://github.com/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/github/license/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen.svg)](./LICENSE)
 ![Code size](https://img.shields.io/github/languages/code-size/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen.svg)
 [![open issues](https://img.shields.io/github/issues/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen.svg)](https://github.com/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen/issues?q=is%3Aopen+is%3Aissue)
 [![closed issues](https://img.shields.io/github/issues-closed/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen.svg)](https://github.com/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen/issues?q=is%3Aissue+is%3Aclosed)
@@ -10,10 +10,6 @@
 ## Live view
 
 Live view: [https://foerderverein-ggnauen.de/](https://foerderverein-ggnauen.de/?source=github)
-
-## How to run the app
-
-If you want to run this project locally, clone this repository, install node modules with the command `$ npm i` or `yarn` and start it with `$ npm start` or `$ yarn start`. Please note that this only works on `localhost:3000` or `localhost:3001`. Otherwise there is an error message. This is due to CORS restrictions in the API that supplies the content of the app.
 
 ## Optimization (Lighthouse analysis)
 
@@ -26,4 +22,4 @@ _Lighthouse analysis of the home page from June 12, 2020_
 
 ## License
 
-Licensed under the [MIT](https://github.com/peter-stuhlmann/Foerderverein-Goethe-Gymnasium-Nauen/blob/master/LICENSE) license by [Peter R. Stuhlmann](https://peter-stuhlmann-webentwicklung.de).
+Licensed under the [MIT](./LICENSE) license by [Peter R. Stuhlmann](https://peter-stuhlmann-webentwicklung.de).
