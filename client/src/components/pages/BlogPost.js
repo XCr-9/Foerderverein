@@ -5,6 +5,8 @@ import { Context } from '../../Context';
 import { Heading } from '../Headings';
 import { meta } from '../../helpers/meta';
 
+import Attendance from '../Attendance';
+
 export default function BlogPost(props) {
   const { content } = useContext(Context);
 
@@ -22,6 +24,7 @@ export default function BlogPost(props) {
           __html: content.blog.posts[index].content,
         }}
       />
+      {content.blog.posts[index].attendance && <Attendance />}
     </StyledBlogPost>
   );
 }
