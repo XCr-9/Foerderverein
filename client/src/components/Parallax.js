@@ -19,7 +19,14 @@ export default function Parallax() {
   }, [inView]);
 
   return (
-    <StyledParallax ref={ref}>
+    <StyledParallax
+      ref={ref}
+      backgroundImage={
+        WebP()
+          ? '/img/goethe-gymnasium-nauen.webp'
+          : '/img/goethe-gymnasium-nauen.jpg'
+      }
+    >
       <Heading
         h1
         title={content.welcome}
@@ -35,9 +42,7 @@ export default function Parallax() {
 const StyledParallax = styled.div`
   align-items: center;
   background-attachment: fixed;
-  background-image: url('${WebP()
-    ? 'https://api.foerderverein-ggnauen.de/img/goethe-gymnasium-nauen.webp'
-    : 'https://api.foerderverein-ggnauen.de/img/goethe-gymnasium-nauen.jpg'}');
+  background-image: url(${(props) => props.backgroundImage});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

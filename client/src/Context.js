@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 
-import { useFetch } from './helpers/useFetch';
-import Spinner from './components/Spinner';
 import { trackingCode } from './helpers/analytics';
+
+// data
+import content from './data/content';
+import legal from './data/legal';
 
 export const Context = React.createContext(null);
 
@@ -33,30 +35,20 @@ export default function ContextProvider({ children }) {
     window[`ga-disable-${trackingCode}`] = true;
   }
 
-  const fetched = useFetch(`https://api.foerderverein-ggnauen.de`);
-
-  if (fetched && fetched.response) {
-    const content = fetched.response.data.content;
-    const legal = fetched.response.data.legal;
-
-    return (
-      <Context.Provider
-        value={{
-          content,
-          legal,
-          generalMeetingIndex,
-          setGeneralMeetingIndex,
-          optIn,
-          optOut,
-          cookieOptIn,
-          setCookieOptIn,
-        }}
-      >
-        {children}
-      </Context.Provider>
-    );
-  } else if (fetched && fetched.error) {
-    return 'Es ist ein Fehler aufgetreten. Bitte besuchen Sie uns zu einem späteren Zeitpunkt erneut.';
-  }
-  return <Spinner />;
+  return (
+    <Context.Provider
+      value={{
+        content,
+        legal,
+        generalMeetingIndex,
+        setGeneralMeetingIndex,
+        optIn,
+        optOut,
+        cookieOptIn,
+        setCookieOptIn,
+      }}
+    >
+      {children}
+    </Context.Provider>
+  );
 }
